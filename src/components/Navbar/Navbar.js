@@ -24,7 +24,7 @@ class Navbar extends Component {
       return(
         <nav className="nav-style">
             <p>Welcome, {this.state.loggedInUser.username}</p>
-            <Link to='/projects' style={{ textDecoration: 'none' }}>Projects</Link>
+            <Link to='/flavorlists' style={{ textDecoration: 'none' }}>Flavorlists</Link>
               <Link to='/'>
                 <button onClick={() => this.logoutUser()}>Logout</button>
               </Link>
