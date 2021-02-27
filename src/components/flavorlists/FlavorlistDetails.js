@@ -26,7 +26,7 @@ class FlavorlistDetails extends Component {
   renderEditForm = () => {
     if(!this.state.title){
       this.getSingleFlavorlist();
-    } else {                                                                   |
+    } else {                                                                   
       return <EditFlavorlist theFlavorlist={this.state} getTheFlavorlist={this.getSingleFlavorlist} {...this.props} />
     }
   }
