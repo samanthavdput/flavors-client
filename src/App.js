@@ -6,9 +6,9 @@ import Signup from './components/auth/Signup';
 import AuthService from './components/auth/auth-service';
 import Login from './components/auth/Login';
 import ProtectedRoute from './components/auth/protected-route';
-// import AllFlavorlists from './components/flavorlists/AllFlavorlists';
-// import FlavorlistDetails from './components/flavorlists/FlavorlistDetails';
-// import CupcakeDetails from './components/cupcakes/CupcakeDetails';
+import AllFlavorlists from './components/flavorlists/AllFlavorlists';
+import FlavorlistDetails from './components/flavorlists/FlavorlistDetails';
+import CupcakeDetails from './components/cupcakes/CupcakeDetails';
  
 
 class App extends Component {
@@ -44,23 +44,23 @@ class App extends Component {
       return (
         <div className="App">
           <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
-          {/* <Switch>
+          <Switch>
             <ProtectedRoute user={this.state.loggedInUser} path='/flavorlists/:id' component={FlavorlistDetails} />
             <ProtectedRoute user={this.state.loggedInUser} path='/flavorlists' component={AllFlavorlists} />
             <ProtectedRoute user={this.state.loggedInUser} exact path="/flavorlists/:id/cupcakes/:cupcakeId" component={CupcakeDetails} />
-          </Switch> */}
+          </Switch>
         </div>
       );
     } else {
       return (
         <div className="App">
           <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
-            {/* <Switch> 
+            <Switch> 
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
               <Route exact path='/' render={() => <Login getUser={this.getTheUser}/>}/>
               <ProtectedRoute user={this.state.loggedInUser} path='/flavorlists/:id' component={FlavorlistDetails} />
               <ProtectedRoute user={this.state.loggedInUser} path='/flavorlists' component={AllFlavorlists} />
-            </Switch> */}
+            </Switch>
         </div>
       );
     }
