@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5842d057-0711-486b-82b9-4eea32ff97d9/deploy-status)](https://app.netlify.com/sites/samscakes-flavors/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
