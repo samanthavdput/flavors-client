@@ -10,7 +10,7 @@ class AddCupcake extends Component {
     const description = this.state.description;
     const flavorlistID = this.props.theFlavorlist._id;
 
-    axios.post("http://localhost:5000/api/cupcakes", { name, description, flavorlistID })
+    axios.post(`${process.env.FLAVORS_API}/cupcakes`, { name, description, flavorlistID })
     .then( () => {
         this.props.getTheFlavorlist();
         this.setState({name: "", description: ""});

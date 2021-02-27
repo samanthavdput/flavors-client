@@ -13,7 +13,7 @@ class FlavorlistDetails extends Component {
  
   getSingleFlavorlist = () => {
     const { params } = this.props.match;
-    axios.get(`http://localhost:5000/api/flavorlists/${params.id}`, {withCredentials:true})
+    axios.get(`${process.env.FLAVORS_API}/flavorlists/${params.id}`, {withCredentials:true})
     .then( responseFromApi =>{
       const theFlavorlist = responseFromApi.data;
       this.setState(theFlavorlist);
@@ -34,7 +34,7 @@ class FlavorlistDetails extends Component {
 // Delete Flavorlist:
   deleteFlavorlist = () => {
     const { params } = this.props.match;
-    axios.delete(`http://localhost:5000/api/flavorlists/${params.id}`, {withCredentials:true})
+    axios.delete(`${process.env.FLAVORS_API}/flavorlists/${params.id}`, {withCredentials:true})
     .then( () =>{
         this.props.history.push('/flavorlists');        
     })

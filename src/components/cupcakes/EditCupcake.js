@@ -17,7 +17,7 @@ class EditCupcake extends Component {
     const name = this.state.name;
     const description = this.state.description;
  
-    axios.put(`http://localhost:5000/api/flavorlists/${this.props.theFlavorlist._id}/cupcakes/${this.props.theCupcake._id}`, { name, description }, {withCredentials:true})
+    axios.put(`${process.env.FLAVORS_API}/flavorlists/${this.props.theFlavorlist._id}/cupcakes/${this.props.theCupcake._id}`, { name, description }, {withCredentials:true})
     .then( () => {
         this.props.history.push('/');    
     }, error => {
