@@ -22,7 +22,7 @@ class AddFlavorlist extends Component {
         this.setState({
             title: "",
             description: "",
-            status: "Your project was created"
+            status: "Your flavorlist was created"
         });
     }, (err) => {
         console.log(err);
