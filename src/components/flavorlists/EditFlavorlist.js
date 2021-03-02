@@ -17,7 +17,7 @@ class EditFlavorlist extends Component {
     const title = this.state.title;
     const description = this.state.description;
  
-    axios.put(`${process.env.FLAVORS_API}/flavorlists/${this.props.theFlavorlist._id}`, { title, description }, {withCredentials:true})
+    axios.put(`${process.env.REACT_APP_FLAVORS_API}/flavorlists/${this.props.theFlavorlist._id}`, { title, description }, {withCredentials:true})
     .then( () => {
         this.props.history.push('/');    
     }, error => {

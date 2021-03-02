@@ -11,7 +11,7 @@ class CupcakeDetails extends Component {
  
   getTheCupcake = () => {
     const { params } = this.props.match;
-    axios.get(`${process.env.FLAVORS_API}/flavorlists/${params.id}/cupcakes/${params.cupcakeId}`)
+    axios.get(`${process.env.REACT_APP_FLAVORS_API}/flavorlists/${params.id}/cupcakes/${params.cupcakeId}`)
     .then( responseFromApi =>{
       const theCupcake = responseFromApi.data;
       this.setState(theCupcake);

@@ -10,7 +10,7 @@ class AllFlavorlists extends Component {
     }
 
     getAllFlavorlists = () => {
-        axios.get(`${process.env.FLAVORS_API}/flavorlists`, {withCredentials:true})
+        axios.get(`${process.env.REACT_APP_FLAVORS_API}/flavorlists`, {withCredentials:true})
             .then(responseFromApi => {
                 this.setState({
                     allLists: responseFromApi.data

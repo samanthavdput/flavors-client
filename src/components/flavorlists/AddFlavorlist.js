@@ -12,7 +12,7 @@ class AddFlavorlist extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
 
-    axios.post(`${process.env.FLAVORS_API}/flavorlists`, {
+    axios.post(`${process.env.REACT_APP_FLAVORS_API}/flavorlists`, {
         title: this.state.title,
         description: this.state.description,
         imageUrl: this.state.imageUrl
@@ -39,7 +39,7 @@ class AddFlavorlist extends Component {
     const uploadData = new FormData();
     uploadData.append("imageUrl", event.target.files[0]);
 
-    axios.post(`${process.env.FLAVORS_API}/upload`, uploadData)
+    axios.post(`${process.env.REACT_APP_FLAVORS_API}/upload`, uploadData)
       .then(response => {
         // response.image_url --> this must be the same name than the property we receive from the api
         // if it doesn't work, try to console.log response we get from the api ;)

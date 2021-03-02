@@ -13,7 +13,7 @@ class FlavorlistDetails extends Component {
  
   getSingleFlavorlist = () => {
     const { params } = this.props.match;
-    axios.get(`${process.env.FLAVORS_API}/flavorlists/${params.id}`, {withCredentials:true})
+    axios.get(`${process.env.REACT_APP_FLAVORS_API}/flavorlists/${params.id}`, {withCredentials:true})
     .then( responseFromApi =>{
       const theFlavorlist = responseFromApi.data;
       this.setState(theFlavorlist);
@@ -34,7 +34,7 @@ class FlavorlistDetails extends Component {
 // Delete Flavorlist:
   deleteFlavorlist = () => {
     const { params } = this.props.match;
-    axios.delete(`${process.env.FLAVORS_API}/flavorlists/${params.id}`, {withCredentials:true})
+    axios.delete(`${process.env.REACT_APP_FLAVORS_API}/flavorlists/${params.id}`, {withCredentials:true})
     .then( () =>{
         this.props.history.push('/flavorlists');        
     })
@@ -52,7 +52,7 @@ class FlavorlistDetails extends Component {
   }
 
   ownershipCheck = (flavorlist) => {
-    if(this.props.loggedInUser && flavorlist.owner == this.props.loggedInUser._id){
+    if(this.props.loggedInUser && flavorlist.owner === this.props.loggedInUser._id){
       return (
         <div>
           <div>{this.renderEditForm()} </div>
@@ -67,7 +67,7 @@ class FlavorlistDetails extends Component {
       <div>
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
-        <img src={this.state.imageUrl} />
+        <img src={this.state.imageUrl} alt="" />
         { this.state.cupcakes && this.state.cupcakes.length > 0 && <h3>Cupcakes</h3> }
         { this.state.cupcakes && this.state.cupcakes.map((cupcake, index) => {
             return(
