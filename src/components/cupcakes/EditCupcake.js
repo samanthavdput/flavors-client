@@ -7,7 +7,8 @@ class EditCupcake extends Component {
         super(props);
         this.state = {
             name: this.props.theCupcake.name,
-            description: this.props.theCupcake.description
+            description: this.props.theCupcake.description,
+            ingredients: this.props.theCupcake.ingredients
         }
     }
   
@@ -16,8 +17,9 @@ class EditCupcake extends Component {
 
     const name = this.state.name;
     const description = this.state.description;
+    const ingredients = this.state.ingredients;
  
-    axios.put(`${process.env.REACT_APP_FLAVORS_API}/flavorlists/${this.props.theFlavorlist._id}/cupcakes/${this.props.theCupcake._id}`, { name, description }, {withCredentials:true})
+    axios.put(`${process.env.REACT_APP_FLAVORS_API}/flavorlists/${this.props.theFlavorlist._id}/cupcakes/${this.props.theCupcake._id}`, { name, description, ingredients }, {withCredentials:true})
     .then( () => {
         this.props.history.push('/');    
     }, error => {
@@ -36,6 +38,12 @@ class EditCupcake extends Component {
       description:event.target.value
     })
   }
+
+  handleChangeIng = (event) => {  
+    this.setState({
+      ingredients:event.target.value
+    })
+  }
  
   render(){
     return (
@@ -48,6 +56,9 @@ class EditCupcake extends Component {
           
           <label>Description:</label>
           <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
+
+          <label>Ingredients:</label>
+          <textarea name="ingredients" value={this.state.ingredients} onChange={e => this.handleChangeIng(e)} />
           
           <input type="submit" value="Submit" />
         </form>

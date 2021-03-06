@@ -73,7 +73,7 @@ class FlavorlistDetails extends Component {
             return(
                 <div key={ index }>
                     <Link to={`/flavorlists/${this.state._id}/cupcakes/${cupcake._id}`}> 
-                        { cupcake.name }
+                        {cupcake.name}
                     </Link>
                 </div>
             )
