@@ -34,7 +34,7 @@ class Navbar extends Component {
     } else {
       return ( 
         <nav className="nav-style">
-            <p><Link to='/' style={{ textDecoration: 'none' }}>Login</Link></p>
+            <p><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></p>
             <p><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></p>
         </nav>
       )

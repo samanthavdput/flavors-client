@@ -45,7 +45,7 @@ class CupcakeDetails extends Component {
       return (
         <div>
           <div>{this.renderEditForm()} </div>
-          <button onClick={() => this.deleteFlavorlist(this.state._id)}>Delete this Flavorlist</button>
+          <button onClick={() => this.deleteCupcake(this.state._id)}>Delete this cupcake</button>
         </div>
       )
     } 
@@ -60,7 +60,7 @@ class CupcakeDetails extends Component {
         <p>{this.state.ingredients}</p>
         <img src={this.state.imageUrl} alt="" />
 
-        <button onClick={() => this.deleteFlavorlist(this.state._id)}>Delete this cupcake</button>
+        <button onClick={() => this.deleteCupcake(this.state._id)}>Delete this cupcake</button>
       </div>
     )
   }

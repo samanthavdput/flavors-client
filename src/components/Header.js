@@ -13,9 +13,12 @@ export default function Header() {
                     <div className='text-teaser-div col-4'>
                         <h1 className='teaser-title'>Sam's Cakes Ajaccio <br /> Flavors of the week</h1>
                         <p className='teaser-par'>Tool to plan this week's cupcakes <br /> and get all the recipes</p>
-                        {/* <Link to='/login'>
-                            <button className='login-btn btn btn-lg'>Login page</button>
-                        </Link> */}
+                        <Link to='/login'>
+                            <button className='submit'>Login</button>
+                        </Link>
+                        <Link to='/signup'>
+                            <button className='submit'>Signup</button>
+                        </Link>
                     </div>
                     <div className='header-img-div col-3'>
                         <img src={Logo} alt='background-img' className='header-img' />

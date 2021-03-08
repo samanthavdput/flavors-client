@@ -11,6 +11,7 @@ import FlavorlistDetails from './components/flavorlists/FlavorlistDetails';
 import CupcakeDetails from './components/cupcakes/CupcakeDetails';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
  
 
 class App extends Component {
@@ -45,13 +46,12 @@ class App extends Component {
     if(this.state.loggedInUser){
       return (
         <div className="App">
+          <Header/>
           <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
-          <Header />
           <Switch>
-            <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists/:id' component={FlavorlistDetails} />
             <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists' component={AllFlavorlists} />
+            <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists/:id' component={FlavorlistDetails} />
             <ProtectedRoute user={this.state.loggedInUser} exact path="/flavorlists/:id/cupcakes/:cupcakeId" component={CupcakeDetails} />
-        }}/>
           </Switch>
           <div>
             <Footer />
@@ -61,13 +61,13 @@ class App extends Component {
     } else {
       return (
         <div className="App">
+        <Header/>
           <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
-          <Header />
             <Switch> 
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
-              <Route exact path='/' render={() => <Login getUser={this.getTheUser}/>}/>
-              <ProtectedRoute user={this.state.loggedInUser} path='/flavorlists/:id' component={FlavorlistDetails} />
-              <ProtectedRoute user={this.state.loggedInUser} path='/flavorlists' component={AllFlavorlists} />
+              <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
+              <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists/:id' component={FlavorlistDetails} />
+              <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists' component={AllFlavorlists} />
               <ProtectedRoute user={this.state.loggedInUser} exact path="/flavorlists/:id/cupcakes/:cupcakeId" component={CupcakeDetails} />
             </Switch>
             <div>

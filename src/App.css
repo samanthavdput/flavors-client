@@ -126,3 +126,11 @@
   align-items: center;
   padding: 50px 0 30px;
 }
+
+a {
+  color: #e4bcd7;
+}
+
+a:hover {
+  color: #ffffff;
+}

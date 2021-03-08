@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from './auth-service';
 import { Link } from 'react-router-dom';
+import '../CSS/Login.css';
  
 class Login extends Component {
   state = { username: '', password: '' }
@@ -27,17 +28,18 @@ class Login extends Component {
     
   render(){
     return(
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <div className="main">
+        <form className="form1" onSubmit={this.handleFormSubmit}>
+        <p className="sign" align="center">Login</p>
           <label>Username:</label>
-          <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
+          <input className="un" type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
           <label>Password:</label>
-          <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+          <input className="pass" type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           
-          <input type="submit" value="Login" />
+          <button className="submit" type="submit" value="Login">Login</button>
         </form>
-        <p>Don't have account? 
-            <Link to={"/signup"}> Signup</Link>
+        <p>Don't have an account? 
+            <Link to={"/signup"} className=""> Signup</Link>
         </p>
       </div>
     )

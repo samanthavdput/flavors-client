@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from './auth-service';
 import { Link } from 'react-router-dom';
+import '../CSS/Login.css';
 
  
 class Signup extends Component {
@@ -34,23 +35,25 @@ class Signup extends Component {
    
   render(){
     return(
-      <div>
-        <h3>Create your account:</h3>
-        <form onSubmit={this.handleFormSubmit}>
+      <div className="container">
+        <div className="main">
+        <p className="sign">Create your account:</p>
+        <form className="form1" onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
-          <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
+          <input type="text" className="un" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
           
           <label>Password:</label>
-          <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+          <input className="pass" type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           
-          <input type="submit" value="Signup" />
+          <button className="submit" type="submit" value="Signup">Signup</button>
         </form>
    
-        <p>Already have account? 
+        <p>Already have an account? 
             <Link to={"/"}> Login</Link>
         </p>
    
       </div>
+    </div>
     )
   }
 }

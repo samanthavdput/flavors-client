@@ -18,8 +18,15 @@ class EditCupcake extends Component {
     const name = this.state.name;
     const description = this.state.description;
     const ingredients = this.state.ingredients;
- 
-    axios.put(`${process.env.REACT_APP_FLAVORS_API}/flavorlists/${this.props.theFlavorlist._id}/cupcakes/${this.props.theCupcake._id}`, { name, description, ingredients }, {withCredentials:true})
+    
+    // const flavourlistId = this.props.theFlavorlist._id;
+    const flavourlistId = this.props.match.params.id;
+    const cupcakeId = this.props.match.params.cupcakeId;
+
+    axios.put(
+      `${process.env.REACT_APP_FLAVORS_API}/flavorlists/${flavourlistId}/cupcakes/${cupcakeId}`, 
+      { name, description, ingredients }, 
+      {withCredentials:true})
     .then( () => {
         this.props.history.push('/');    
     }, error => {
