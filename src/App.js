@@ -66,8 +66,8 @@ class App extends Component {
             <Switch> 
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
               <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
-              <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists/:id' component={FlavorlistDetails} />
               <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists' component={AllFlavorlists} />
+              <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists/:id' component={FlavorlistDetails} />
               <ProtectedRoute user={this.state.loggedInUser} exact path="/flavorlists/:id/cupcakes/:cupcakeId" component={CupcakeDetails} />
             </Switch>
             <div>
