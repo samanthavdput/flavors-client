@@ -51,25 +51,36 @@ class EditCupcake extends Component {
       ingredients:event.target.value
     })
   }
+
+//   toggleForm = () => {
+//     if(!this.state.isShowing){
+//         this.setState({isShowing: true});
+//     } else {
+//       this.setState({isShowing: false});
+//     }
+// }
  
   render(){
     return (
-      <div>
+      <div className="container">
+      <div className="main">
         <hr />
-        <h3>Edit this Cupcake:</h3>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Name:</label>
-          <input type="text" name="name" value={this.state.name} onChange={e => this.handleChangeName(e)}/>
+        {/* <button className="submit" onClick={() => this.toggleForm()}> Edit cupcake </button> */}
+        <h3 className="sign">Edit this Cupcake:</h3>
+        <form className="form1" onSubmit={this.handleFormSubmit}>
+          <label className="sign">Name:</label>
+          <input className="un" type="text" name="name" value={this.state.name} onChange={e => this.handleChangeName(e)}/>
           
-          <label>Description:</label>
-          <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
+          <label className="sign">Description:</label>
+          <textarea className="un" name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
 
-          <label>Ingredients:</label>
-          <textarea name="ingredients" value={this.state.ingredients} onChange={e => this.handleChangeIng(e)} />
+          <label className="sign">Ingredients:</label>
+          <textarea className="un" name="ingredients" value={this.state.ingredients} onChange={e => this.handleChangeIng(e)} />
           
-          <input type="submit" value="Submit" />
+          <input className="submit" type="submit" value="Submit" />
         </form>
       </div>
+    </div>
     )
   }
 }

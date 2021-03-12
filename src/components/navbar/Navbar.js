@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../auth/auth-service';
-import '../CSS/Navbar.css';
+import '../CSS/Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../CSS/Navbar.css";
  
 class Navbar extends Component {
   state = { loggedInUser: null }
@@ -23,17 +25,17 @@ class Navbar extends Component {
   render(){
     if(this.state.loggedInUser){
       return(
-        <nav className="nav-style">
-            <p>Welcome, {this.state.loggedInUser.username}</p>
+        <nav className="navbar navbar-light" style={{backgroundColor: "#FFFFFF", height: "3em", marginBottom: "10px"}}>
+            <h5>Welcome, {this.state.loggedInUser.username}</h5>
             <Link to='/flavorlists' style={{ textDecoration: 'none' }}>Flavorlists</Link>
               <Link to='/'>
-                <button onClick={() => this.logoutUser()}>Logout</button>
+                <button onClick={() => this.logoutUser()} className="submit">Logout</button>
               </Link>
         </nav>
       )
     } else {
       return ( 
-        <nav className="nav-style">
+        <nav className="navbar navbar-light" style={{backgroundColor: "#FFFFFF", height: "3em", marginBottom: "-40px"}}>
             <p><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></p>
             <p><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></p>
         </nav>

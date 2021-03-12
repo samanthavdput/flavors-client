@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/Login.css";
  
 class AddFlavorlist extends Component {
   state = { 
@@ -62,18 +63,23 @@ class AddFlavorlist extends Component {
 
         { this.state.status !== '' ? <div>{this.state.status}</div> : null }
 
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
-          <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
+    <div className="container">
+      <div className="main">
+        <form onSubmit={this.handleFormSubmit} className="form1">
+        <p className="sign" align="center">Add a new Flavorlist</p>
+          <label className="sign">Title:</label>
+          <input className="un" type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
           
-          <label>Description:</label>
-          <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
+          <label className="sign">Description:</label>
+          <textarea className="un" name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
           
-          <label>Flavorlist Image:</label>
-          <input type="file" onChange={ (e) => this.handleFileUpload(e) } />
+          <label className="sign">Flavorlist Image:</label>
+          <input className="un" type="file" onChange={ (e) => this.handleFileUpload(e) } />
 
-          <input type="submit" value="Submit" />
+          <button className="submit" type="submit" value="Submit">Create</button>
         </form>
+      </div>
+    </div>
       </React.Fragment>
     )
   }

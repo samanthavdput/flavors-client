@@ -1,5 +1,22 @@
 .App {
   text-align: center;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+ display: block;
+ position: relative;
+}
+
+a {
+  color: #e4bcd7;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+.FooterWrap {
+  padding-bottom: 2.5rem;
 }
 
 /* .App-logo {
@@ -125,12 +142,4 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px 0 30px;
-}
-
-a {
-  color: #e4bcd7;
-}
-
-a:hover {
-  color: #ffffff;
 }

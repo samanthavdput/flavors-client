@@ -40,38 +40,45 @@ class App extends Component {
       loggedInUser: userObj
     })
   }
+
+  componentDidMount(){
+    this.fetchUser();
+  }
  
   render() {
-    {this.fetchUser()}
+
     if(this.state.loggedInUser){
       return (
         <div className="App">
-          <Header/>
-          <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
+        <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
+          {/* <Header/> */}
+          <Route exact path='/' render={() => <AllFlavorlists/>}/>
           <Switch>
+            
             <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists' component={AllFlavorlists} />
             <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists/:id' component={FlavorlistDetails} />
             <ProtectedRoute user={this.state.loggedInUser} exact path="/flavorlists/:id/cupcakes/:cupcakeId" component={CupcakeDetails} />
           </Switch>
-          <div>
-            <Footer />
+          <div className="FooterWrap">
+            <Footer style={{position: "absolute", bottom: "0", width: "100%", height: "2,5rem"}}/>
           </div>
         </div>
       );
     } else {
       return (
         <div className="App">
-        <Header/>
-          <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
+        <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
+        {/* <Header/> */}
             <Switch> 
+            <Route exact path='/' render={() => <Header/>}/>
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
               <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
               <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists' component={AllFlavorlists} />
               <ProtectedRoute user={this.state.loggedInUser} exact path='/flavorlists/:id' component={FlavorlistDetails} />
               <ProtectedRoute user={this.state.loggedInUser} exact path="/flavorlists/:id/cupcakes/:cupcakeId" component={CupcakeDetails} />
             </Switch>
-            <div>
-            <Footer />
+            <div className="FooterWrap">
+            <Footer style={{position: "absolute", bottom: "0", width: "100%", height: "2,5rem"}}/>
             </div>
         </div>
       );

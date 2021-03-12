@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import EditCupcake from './EditCupcake';
+import "../CSS/Login.css";
  
 class CupcakeDetails extends Component {
   state = {}
@@ -54,13 +55,17 @@ class CupcakeDetails extends Component {
   render(){
     return(
       <div>
-      <div>{this.renderEditForm()} </div>
-        <h1>{this.state.name}</h1>
-        <p>{this.state.description}</p>
-        <p>{this.state.ingredients}</p>
-        <img src={this.state.imageUrl} alt="" />
-
-        <button onClick={() => this.deleteCupcake(this.state._id)}>Delete this cupcake</button>
+      <div className='card'style={{width:'22rem'}}>
+        <div className="card-body">
+        <h1 className="card-title">{this.state.name}</h1>
+        <img className="card-img-top" src={this.state.imageUrl} alt="" />
+        <p className="card-text" style={{color:'#e4bcd7'}}>{this.state.description}</p>
+        <p className="card-text" style={{color:'#e4bcd7'}}>{this.state.ingredients}</p>
+        <button className="submit" onClick={() => this.deleteCupcake(this.state._id)}>Delete this cupcake</button>
+        </div>
+        </div>
+        <hr></hr>
+        <div>{this.renderEditForm()} </div>
       </div>
     )
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/Login.css";
  
 class AddCupcake extends Component {
   state = { name: "", description: "", isShowing: false }
@@ -55,8 +56,9 @@ class AddCupcake extends Component {
   showAddCupcakeForm = () => {
     if(this.state.isShowing){
         return(
-            <div>
-                  <h3>Add Cupcake</h3>
+          <div className="container">
+            <div className="main">
+                  <h3 className="sign">Add Cupcake</h3>
                   <form onSubmit={this.handleFormSubmit}>
                   <label>Name:</label>
                   <input type="text" name="name" value={this.state.name} onChange={ e => this.handleChange(e)}/>
@@ -67,9 +69,10 @@ class AddCupcake extends Component {
                   <label>Cupcake Image:</label>
                   <input type="file" onChange={ (e) => this.handleFileUpload(e) } />
                   
-                  <input type="submit" value="Submit" />
+                  <input className="submit" type="submit" value="Submit" />
                   </form>
             </div>
+          </div>
           )
     }
   }
@@ -78,7 +81,7 @@ class AddCupcake extends Component {
     return(
       <div>
             <hr />
-            <button onClick={() => this.toggleForm()}> Add cupcake </button>
+            <button className="submit" onClick={() => this.toggleForm()}> Add cupcake </button>
             { this.showAddCupcakeForm() }
       </div>
     )

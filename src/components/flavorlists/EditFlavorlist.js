@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/Login.css";
  
 class EditFlavorlist extends Component {
 
@@ -36,22 +37,67 @@ class EditFlavorlist extends Component {
       description:event.target.value
     })
   }
+
+//   toggleForm = () => {
+//     if(!this.state.isShowing){
+//         this.setState({isShowing: true});
+//     } else {
+//       this.setState({isShowing: false});
+//     }
+// }
+
+// showEditFlavorlistForm = () => {
+//   if(this.state.isShowing){
+//       return(
+//           <div className="container">
+//           <div className="main">
+//             <hr />
+//             <h3 className="sign">Edit this Flavorlist:</h3>
+//             <button className="submit" onClick={() => this.toggleForm()}> Edit Flavorlist </button>
+//             <form className="form1" onSubmit={this.handleFormSubmit}>
+//               <label className="sign">Title:</label>
+//               <input className="un" align="center" type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
+              
+//               <label className="sign">Description:</label>
+//               <textarea className="un" align="center" name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
+              
+//               <input className="submit" type="submit" value="Submit" />
+//             </form>
+//           </div>
+//         </div>
+//         )
+//       }
+//     }
+
+// render(){
+//   return(
+//     <div>
+//           <hr />
+//           <button className="submit" onClick={() => this.toggleForm()}> Edit Flavorlist </button>
+//           { this.showEditFlavorlistForm() }
+//     </div>
+//   )
+// }
+// }
  
   render(){
     return (
-      <div>
+      <div className="container">
+      <div className="main">
         <hr />
-        <h3>Edit this Flavorlist:</h3>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
-          <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
+        <h3 className="sign">Edit this Flavorlist:</h3>
+        <button className="submit" onClick={() => this.toggleForm()}> Edit Flavorlist </button>
+        <form className="form1" onSubmit={this.handleFormSubmit}>
+          <label className="sign">Title:</label>
+          <input className="un" align="center" type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
           
-          <label>Description:</label>
-          <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
+          <label className="sign">Description:</label>
+          <textarea className="un" align="center" name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
           
-          <input type="submit" value="Submit" />
+          <input className="submit" type="submit" value="Submit" />
         </form>
       </div>
+    </div>
     )
   }
 }
