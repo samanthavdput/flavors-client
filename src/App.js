@@ -103,7 +103,7 @@ class App extends Component {
             <Route
               exact
               path="/login"
-              render={() => <Login getUser={this.getTheUser} />}
+              render={(props) => <Login {...props} getUser={this.getTheUser} />}
             />
             <ProtectedRoute
               user={this.state.loggedInUser}

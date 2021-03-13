@@ -1,72 +1,78 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5842d057-0711-486b-82b9-4eea32ff97d9/deploy-status)](https://app.netlify.com/sites/samscakes-flavors/deploys)
 
-# Getting Started with Create React App
+# Flavors
+The Flavors app is a bakery management tool that lets employees create their flavorlists and cupcakes and store them in their personalized recipes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instructions
+Use npm start to run the client-side. Use npm run dev to run the server-side.
 
-## Available Scripts
+## User Stories
 
-In the project directory, you can run:
+-  **Signup:** As a user I can sign up in the platform so that I can start creating and managing flavorlists and cupcakes
+-  **Login:** As a user I can login to the platform so that I can start creating and managing flavorlists and cupcakes
+-  **Logout:** As a user I can logout from the platform
+-  **Create flavorlist** As a user I can create my own flavorlists
+-  **Edit flavorlists** As a user I can edit the flavorlists that I have created
+-  **Check flavorlist details** As a user I can check a flavorlist's details, containing the cupcake flavors of the week
+-  **Delete flavorlists** As a user I can delete flavorlists that I created
+-  **Create cupcakes** As a user I can create my own cupcakes with a picture, ingredients and the recipe
+-  **Check cupcake details** As a user I can check a cupcake's details: ingredients and recipe
+-  **Edit cupcakes** As a user I can edit the cupcakes that I have created
+-  **Delete cupcake** As a user I can delete cupcakes that I created
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Login
 
-### `npm test`
+- Signup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Logout
 
-### `npm run build`
+- Navbar
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Header
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Footer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- AllFlavorlists
 
-### `npm run eject`
+- AddFlavorlist
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- EditFlavorlist
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- FlavorlistDetails
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- AddCupcake
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- CupcakeDetails
 
-## Learn More
+- EditCupcake
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- auth-service
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- protected-route
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Models
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+UserModel
 
-### Making a Progressive Web App
+FlavorlistModel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+CupcakeModel
 
-### Advanced Configuration
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Git
 
-### `npm run build` fails to minify
+[Client repository Link](https://github.com/samanthavdput/flavors-client)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Server repository Link](https://github.com/samanthavdput/flavors-server)
+
+[Deployed App Link](https://samscakes-flavors.netlify.app/)
+

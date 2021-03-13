@@ -1,4 +1,4 @@
-import React, { Component, Link } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import EditCupcake from "./EditCupcake";
 import "../CSS/Common.css";
