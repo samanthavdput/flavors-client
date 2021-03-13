@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import EditFlavorlist from "./EditFlavorlist";
 import AddCupcake from "../cupcakes/AddCupcake";
-import "../CSS/Login.css";
+import "../CSS/Common.css";
 
 class FlavorlistDetails extends Component {
   state = {};
@@ -91,19 +91,17 @@ class FlavorlistDetails extends Component {
         <h1>{this.state.title}</h1>
         {/* <p>{this.state.description}</p> */}
         <div className="row row-cols-1 row-cols-md-3 g-4">
-          {this.state.cupcakes && this.state.cupcakes.length > 0 && (
-            <p></p>
-          )}
+          {this.state.cupcakes && this.state.cupcakes.length > 0 && <p></p>}
           {this.state.cupcakes &&
             this.state.cupcakes.map((cupcake, index) => {
               return (
                 <div key={index} className="col-md-4">
-                  <div className="card">
+                  <div className="card" style={{ borderRadius: "20%" }}>
                     <div className="card-body">
                       <Link
                         to={`/flavorlists/${this.state._id}/cupcakes/${cupcake._id}`}
                       >
-                        <h4 className="card-title">{cupcake.name}</h4>
+                        <h3 className="card-title">{cupcake.name}</h3>
                         <img
                           src={cupcake.imageUrl}
                           className="card-img-top"
@@ -121,8 +119,6 @@ class FlavorlistDetails extends Component {
         <button className="submit" onClick={() => this.deleteFlavorlist()}>
           Delete this flavorlist
         </button>
-        <br></br>
-        <Link to={"/flavorlists"}>Back to flavorlists</Link>
       </div>
     );
   }
