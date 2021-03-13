@@ -15,7 +15,7 @@ export default function Header() {
               Sam's Cakes Ajaccio <br /> Flavors of the week
             </h1>
             <p className="teaser-par">
-              This week's cupcakes <br /> and get all the recipes
+              This week's cupcakes <br /> and all the recipes
             </p>
             <Link to="/login">
               <button className="submit">Login</button>

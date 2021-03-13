@@ -32,7 +32,7 @@ class Navbar extends Component {
             marginBottom: "10px",
           }}
         >
-          <h5>Welcome, {this.state.loggedInUser.username}</h5>
+          <h5 className="card-title">Welcome, {this.state.loggedInUser.username}</h5>
           <p>
             <Link to="/flavorlists">Flavorlists</Link>
           </p>
@@ -50,10 +50,10 @@ class Navbar extends Component {
           style={{
             backgroundColor: "#FFFFFF",
             height: "3.5rem",
-            marginBottom: "-40px",
+            marginBottom: "10px",
           }}
         >
-          <p>
+          {/* <p>
             <Link to="/login" style={{ textDecoration: "none" }}>
               Login
             </Link>
@@ -62,7 +62,7 @@ class Navbar extends Component {
             <Link to="/signup" style={{ textDecoration: "none" }}>
               Signup
             </Link>
-          </p>
+          </p> */}
         </nav>
       );
     }

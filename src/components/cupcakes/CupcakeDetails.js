@@ -63,13 +63,16 @@ class CupcakeDetails extends Component {
       return (
         <div>
           <div>{this.renderEditForm()} </div>
-          <button onClick={() => this.deleteCupcake(this.state._id)}>
+          <button className="submit"
+                  onClick={() => this.deleteCupcake(this.state._id)}
+                >
             Delete this cupcake
           </button>
         </div>
       );
     }
   };
+
 
   render() {
     return (
@@ -89,14 +92,15 @@ class CupcakeDetails extends Component {
             <p className="card-text" style={{ color: "#e4bcd7" }}>
               {this.state.description}
             </p>
-            <button
-              className="submit"
-              onClick={() => this.deleteCupcake(this.state._id)}
-            >
-              Delete this cupcake
-            </button>
-            <div>{this.renderEditForm()} </div>
           </div>
+        </div>
+        <div>
+          <div>{this.renderEditForm()} </div>
+          <button className="submit"
+                  onClick={() => this.deleteCupcake(this.state._id)}
+                >
+            Delete this cupcake
+          </button>
         </div>
       </div>
     );

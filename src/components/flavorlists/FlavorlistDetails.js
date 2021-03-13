@@ -77,7 +77,7 @@ class FlavorlistDetails extends Component {
       return (
         <div>
           <div>{this.renderEditForm()} </div>
-          <button onClick={() => this.deleteFlavorlist(this.state._id)}>
+          <button className="submit" onClick={() => this.deleteFlavorlist(this.state._id)}>
             Delete this Flavorlist
           </button>
         </div>
@@ -88,9 +88,9 @@ class FlavorlistDetails extends Component {
   render() {
     return (
       <div>
-        <h1>{this.state.title}</h1>
+        <h1 className="card-title">{this.state.title}</h1>
         {/* <p>{this.state.description}</p> */}
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="row ">
           {this.state.cupcakes && this.state.cupcakes.length > 0 && <p></p>}
           {this.state.cupcakes &&
             this.state.cupcakes.map((cupcake, index) => {
@@ -114,11 +114,10 @@ class FlavorlistDetails extends Component {
               );
             })}
         </div>
-        <div>{this.renderEditForm()} </div>
+        <div >
+        {this.ownershipCheck(this.state)}
+      </div>
         <div>{this.renderAddCupcakeForm()} </div>
-        <button className="submit" onClick={() => this.deleteFlavorlist()}>
-          Delete this flavorlist
-        </button>
       </div>
     );
   }
