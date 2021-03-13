@@ -43,6 +43,10 @@
     height: 200px;
     object-fit: scale-down;
   }
+
+  .card-body {
+    margin: 10px;
+  }
   
   html,
   body {

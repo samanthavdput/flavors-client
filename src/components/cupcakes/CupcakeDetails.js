@@ -92,15 +92,15 @@ class CupcakeDetails extends Component {
             <p className="card-text" style={{ color: "#e4bcd7" }}>
               {this.state.description}
             </p>
-          </div>
-        </div>
-        <div>
+            <div>
           <div>{this.renderEditForm()} </div>
           <button className="submit"
                   onClick={() => this.deleteCupcake(this.state._id)}
                 >
             Delete this cupcake
           </button>
+        </div>
+          </div>
         </div>
       </div>
     );
